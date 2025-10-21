@@ -36,7 +36,7 @@
 template <typename Container>
 void putContainer(Container container)
 {
-    typename T::iterator it = container.begin();
+    typename Container::iterator it = container.begin();
     
     std::cout << YELLOW "Container: [";
     while(it != container.end())
@@ -57,10 +57,15 @@ void sortContainer(Container &container)
 }
 
 /* Specific for List type containers */
-template <typename T, typename Allocator>
-void sortContainer(std::list<T, Allocator> &c)
-{
+// template <typename T, typename Allocator>
+// void sortContainer(std::list<T, Allocator> &c)
+// {
     
+// }
+
+void sortContainer(std::list<int> container)
+{
+    container.sort();
 }
 
 #endif

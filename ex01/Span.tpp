@@ -37,7 +37,7 @@ void Span<T>::addNumber(InputIterator begin, InputIterator end)
     
     /* #2 freeSpace: How many slots are left*/
     size_t freeSpace = _N - _container.size();
-    std::cout << "nb_elements = " << nb_elements << ", freeSpace = " << freeSpace << std::endl;
+    // std::cout << "nb_elements = " << nb_elements << ", freeSpace = " << freeSpace << std::endl;
 
     if (nb_elements > freeSpace)
         throw std::runtime_error("Not enough space in Span");
@@ -75,20 +75,28 @@ int Span<Container>::shortestSpan()
     /* #2 Sorts the integers ascending from container */
     sortContainer(sorted); // 👈 automatically calls correct version!:)
     
-    sorted.sort();
-    
-    typename T::const_iterator prev = sorted.begin();
-    typename T::const_iterator it = prev;
+    /* #3 Creates 2 iterators */
+    typename Container::const_iterator prev = sorted.begin();
+    typename Container::const_iterator it = prev;
     ++it;
 
     int minDiff = std::abs(*it - *prev);
-
+    int number1 = *prev;
+    int number2= *it;
+    /* #4 Iterates through the container looking for minimum difference */
     for (; it != sorted.end(); ++it, ++prev)
     {
         int diff = std::abs(*it - *prev);
         if (diff < minDiff)
+        {
             minDiff = diff;
+            number1 = *prev;
+            number2 = *it;
+        }
+            
     }
+    std::cout << "  > shortestSpan, number1 = " << number1 << std::endl;
+    std::cout << "  > shortestSpan, number2 = " << number2 << std::endl;
 
     return minDiff;
     

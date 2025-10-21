@@ -51,6 +51,7 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << "✅ Program continues safely!" << std::endl;
     
     /* Test 1: longestSpan*/
     std::cout << "\n📄 Test 1 - Vector: the longest distance between numbers in our container." << std::endl;

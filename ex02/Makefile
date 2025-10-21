@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: uxmancis <uxmancis>                        +#+  +:+       +#+         #
+#    By: uxuemancisidorlaskurain <uxuemancisidor    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/16 14:49:07 by uxmancis          #+#    #+#              #
-#    Updated: 2025/10/17 17:29:51 by uxmancis         ###   ########.fr        #
+#    Updated: 2025/10/21 12:13:41 by uxuemancisi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 # Source files and object files
-SRC =	main.cpp\
-		Span.cpp
+SRC =	main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
