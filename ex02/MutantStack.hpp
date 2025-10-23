@@ -6,7 +6,7 @@
 /*   By: uxmancis <uxmancis>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 18:22:51 by uxmancis          #+#    #+#             */
-/*   Updated: 2025/10/22 18:54:25 by uxmancis         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:17:50 by uxmancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,12 @@ class	MutantStack : public std::stack<T>
 		
 		/*OCF*/
 		MutantStack(): std::stack<T>(){}; /* Default Constructor */
-		MutantStack(const MutantStack	&src2cpy): std::stack<T>(std::stack<T> (src2cpy)){}; /* Copy constructor */
+		MutantStack(const MutantStack	&src2cpy): std::stack<T> (src2cpy){}; /* Copy constructor */
 		MutantStack& operator=(const MutantStack	&src2cpy)/* Copy assignment operator */
 		{
-			static_cast<std::stack<T> > (this) = static_cast<std::stack<T> > (src2cpy);
+			if (this != &src2cpy)
+				std::stack<T>::operator=(src2cpy); //Calls std::stack's assignment operator
+			return *this;
 		}; 
 		~MutantStack(){}; /* Destructor */
 
@@ -81,7 +83,7 @@ class	MutantStack : public std::stack<T>
 		*  About syntax: 
 		*		typedef --> creates an alias (nickname) for a type
 		*				E.g.: 
-		*					typedef unsigned long long ULL;
+		*					typedefnsigned long long ULL;
 		*					ULL age = 42;
 		*						, instead of
 		*					unsigned long long age = 42;

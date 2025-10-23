@@ -6,13 +6,13 @@
 #    By: uxmancis <uxmancis>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/16 14:49:07 by uxmancis          #+#    #+#              #
-#    Updated: 2025/10/17 12:21:56 by uxmancis         ###   ########.fr        #
+#    Updated: 2025/10/20 12:57:01 by uxmancis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler and compiler flags
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 # Source files and object files
 SRC =	main.cpp\

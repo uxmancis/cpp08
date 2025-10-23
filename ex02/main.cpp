@@ -6,7 +6,7 @@
 /*   By: uxmancis <uxmancis>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 18:18:09 by uxmancis          #+#    #+#             */
-/*   Updated: 2025/10/22 17:48:24 by uxmancis         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:56:37 by uxmancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,21 @@
 /* std::stack container is not iterable*/
 
 /* main required in subject: using std::stack methods*/
-// int main()
-// {
-//     MutantStack<int> mstack;
-//     mstack.push(5); //inserts element at the top
-//     mstack.push(17);
-//     std::cout << mstack.top() << std::endl; //accesses to the top element, shows 17
-//     mstack.pop(); //removes the top element
-//     std::cout << mstack.size() << std::endl; //shows 1
-//     mstack.push(3);
-//     mstack.push(5);
-//     mstack.push(737);
-//     //[...]
-//     mstack.push(0);
-//     MutantStack<int>::iterator it = mstack.begin();
-//     MutantStack<int>::iterator ite = mstack.end();
-//     ++it;
-//     --it;
-//     while (it != ite)
-//     {
-//     std::cout << *it << std::endl;
-//     ++it;
-//     }
-//     std::stack<int> s(mstack);
-//     return 0;
-// }
-
-#include <list>
-
-/* main required in subject: for lists*/
 int main()
 {
-    std::list<int> mstack;
-    mstack.push_back(5); //'push' in our MutantStack (inherites from std::stack)
-    mstack.push_back(17);
-    std::cout << mstack.back() << std::endl; //'top' in our MutantStack (inherites from std::stack)
-    mstack.pop_back(); //'pop' in our MutantStack (inherites from std::stack)
-    std::cout << mstack.size() << std::endl;
-    mstack.push_back(3);
-    mstack.push_back(5);
-    mstack.push_back(737);
+    MutantStack<int> mstack;
+    mstack.push(5); //inserts element at the top
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl; //accesses to the top element, shows 17
+    mstack.pop(); //removes the top element
+    std::cout << mstack.size() << std::endl; //shows 1
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
     //[...]
-    mstack.push_back(0);
-
-    /* std::list already has iterators */
-    std::list<int>::iterator it = mstack.begin();
-    std::list<int>::iterator ite = mstack.end();
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
     ++it;
     --it;
     while (it != ite)
@@ -68,9 +37,40 @@ int main()
     std::cout << *it << std::endl;
     ++it;
     }
-    std::list<int> s(mstack);
+    std::stack<int> s(mstack);
     return 0;
 }
+
+// #include <list>
+
+// /* main required in subject: methods and iterators are adapted for lists*/
+// int main()
+// {
+//     std::list<int> mstack;
+//     mstack.push_back(5); //'push' in our MutantStack (inherites from std::stack)
+//     mstack.push_back(17);
+//     std::cout << mstack.back() << std::endl; //'top' in our MutantStack (inherites from std::stack)
+//     mstack.pop_back(); //'pop' in our MutantStack (inherites from std::stack)
+//     std::cout << mstack.size() << std::endl;
+//     mstack.push_back(3);
+//     mstack.push_back(5);
+//     mstack.push_back(737);
+//     //[...]
+//     mstack.push_back(0);
+
+//     /* std::list already has iterators */
+//     std::list<int>::iterator it = mstack.begin();
+//     std::list<int>::iterator ite = mstack.end();
+//     ++it;
+//     --it;
+//     while (it != ite)
+//     {
+//     std::cout << *it << std::endl;
+//     ++it;
+//     }
+//     std::list<int> s(mstack);
+//     return 0;
+// }
 
 #include <stack>
 #define CYAN "\033[36m"
